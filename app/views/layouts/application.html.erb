@@ -5,12 +5,17 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
-    <%= yield %>
+  <body class="flex flex-col items-center min-h-lvh min-w-dvw">
+    <header class="flex justify-center w-full py-2">Header</header>
+    <main class="flex justify-center w-4/5">
+      <%= yield %>
+    </main>
+    <footer class="flex justify-center items-center mt-auto p-3">Footer</footer>
   </body>
 </html>
