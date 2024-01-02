@@ -1,0 +1,21 @@
+<%= render 'layouts/shared/errors', target: @task %>
+
+<div class="flex flex-col bg-gray-200 w-full py-5">
+  <h1 class="text-center text-xl">Nova Tarefa</h1>
+  <div class="flex flex-col items-center">
+    <section class="flex flex-col w-4/5 sm:w-1/2 md:w-2/6 bg-gray-300 p-5 rounded-lg shadow-stone-500 shadow-md">
+      <%= form_with model: @task, data: {turbo: false} do |form| %>
+        <%= form.label :title, 'Título' %>
+        <%= form.text_field :title, class: 'w-full' %>
+
+        <%= form.label :description, 'Descrição' %>
+        <%= form.text_area :description, class: 'w-full' %>
+
+        <div class="flex flex-row justify-evenly items-center mt-5 gap-3">
+          <button class="form-buttons w-full"><%= form.submit 'Salvar', type: 'submit' %></button>
+          <button class="form-buttons w-full"><%= link_to 'Cancelar', tasks_path %></button>
+        </div>
+      <% end %>
+    </section>
+  </div>
+</div>
